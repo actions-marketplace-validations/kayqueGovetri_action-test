@@ -24,18 +24,14 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: checkout
-      uses: actions/checkout@master
-      with:
-        fetch-depth: 0
     - name: Install Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
     - name: Install Dependencies
-      run: pip install -r requirements.txt
+      run: pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
     - name: Run botcity action
       id: botcity-action
-      run: python main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --technology=${{ inputs.technology }}
+      run: python ${{ github.action_path }}/main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --technology=${{ inputs.technology }}
       shell: bash
