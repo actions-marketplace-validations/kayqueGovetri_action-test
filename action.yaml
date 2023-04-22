@@ -21,6 +21,9 @@ inputs:
     description: 'Version number?'
     required: false
     default: ""
+  technology:
+      description: 'Technology?'
+      required: true
 runs:
   using: 'composite'
   steps:
