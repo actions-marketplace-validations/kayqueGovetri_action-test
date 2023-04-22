@@ -143,6 +143,7 @@ class Action:
         parser.add_argument("-p", "--path", help="Path to github action repository", type=str, action="store")
         parser.add_argument("-bi", "--botId", help="Bot ID that will be modified.", type=str, action="store")
         parser.add_argument("-t", "--technology", help="technology bot.", type=str, action="store")
+        parser.add_argument("-ap", "--actionPath", help="actionPath", type=str, action="store")
 
         args = parser.parse_args()
         return args

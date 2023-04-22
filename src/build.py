@@ -43,7 +43,7 @@ class Build:
         return file_name
 
     def get_sh(self, file_name: str):
-        sh = os.path.join(os.path.abspath('build'), file_name)
+        sh = os.path.join(self.args.actionPath, 'build', file_name)
         print(f'SH is = {sh}')
         return sh
 
@@ -60,5 +60,5 @@ class Build:
 
     def set_command(self, sh: str, path: pathlib.Path, file_path: str):
         command = f'{sh} -p "{path}" -a "{file_path}"'
-        print(command)
+        print(f'command is {command}')
         os.system(command=command)

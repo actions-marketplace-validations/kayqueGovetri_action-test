@@ -36,5 +36,5 @@ runs:
       shell: bash
     - name: Run botcity action
       id: botcity-action
-      run: python ${{ github.action_path }}/main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --technology=${{ inputs.technology }}
+      run: python ${{ github.action_path }}/main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --technology=${{ inputs.technology }} --actionPath=${{ github.action_path }}
       shell: bash
