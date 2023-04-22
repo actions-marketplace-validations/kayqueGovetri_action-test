@@ -197,11 +197,14 @@ class Action:
         self.filepath = build.run()
 
         if self.args.update:
+            print("ENTER IN UPDATE")
             self.update()
 
         if self.args.deploy:
+            print("ENTER IN DEPLOY")
             self.deploy()
             self.update()
 
         if self.args.release:
+            print("ENTER IN RELEASE")
             self.release()
