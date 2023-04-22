@@ -44,6 +44,7 @@ class Build:
 
     def get_sh(self, file_name: str):
         sh = os.path.join(os.path.abspath('build'), file_name)
+        print(f'SH is = {sh}')
         return sh
 
     def set_permission(self, sh: str):
