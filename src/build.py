@@ -58,4 +58,6 @@ class Build:
         return file_path
 
     def set_command(self, sh: str, path: pathlib.Path, file_path: str):
-        os.system(command=f'{sh} -p "{path}" -a "{file_path}"')
+        command = f'{sh} -p "{path}" -a "{file_path}"'
+        print(command)
+        os.system(command=command)
