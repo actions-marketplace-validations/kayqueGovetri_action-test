@@ -28,6 +28,9 @@ class Build:
 
         file_path = self.get_file_path(path=path)
 
+        if os.path.exists(file_path):
+            os.unlink(file_path)
+
         self.set_command(sh=sh, file_path=file_path, path=path)
 
         return file_path
